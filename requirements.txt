@@ -1,0 +1,8 @@
+pandas==1.0.3
+loguru==0.5.0
+numpy==1.18.4
+imbalanced_learn==0.6.2
+imblearn==0.0
+matplotlib==3.2.1
+scikit_learn==0.23.1
+seaborn==0.10.1
