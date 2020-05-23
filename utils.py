@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn  as sns; sns.set()
 import matplotlib.pyplot as plt
+import numpy as np
 
 def load_data(path:str):
     '''
@@ -19,8 +20,14 @@ def plot_training_cost(cost:list,save_path=''):
     if save_path:
         sns_plot.get_figure().savefig(save_path)
 
-# def plot_fit(x, y, y_pred):
-#     sns.scatterplot()
-    # plt.scatter(x,y)
-    # plt.plot(x, y_pred)
-    # return 
+def plot_line(x,y,save_name):
+    plt.clf()
+    plt.plot(x, y)
+
+    # show annotation for the max point
+    max_index = np.argmax(y)
+    text = '[{}, {}]'.format(x[max_index], round(y[max_index],2))
+    plt.annotate(text, xytext=(x[max_index], y[max_index]),
+        xy=(x[max_index], y[max_index]))
+
+    plt.savefig(save_name)
