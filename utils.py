@@ -13,6 +13,10 @@ def load_data(path:str):
     y = np_data[:,-1].reshape((-1,1))
     return (x,y)
 
+def load_data_as_df(path:str):
+    data_frame = pd.read_table(path, header=None, delim_whitespace=True)
+    return (data_frame.loc[:, 1:len(data_frame.columns)-2], data_frame.loc[:, len(data_frame.columns)-1])
+
 def plot_training_cost(cost:list,save_path=''):
     plt.clf()
     df = pd.DataFrame( [(i, cost[i]) for i in range(len(cost))], columns=['iteration No.', 'cost'] )
@@ -31,3 +35,5 @@ def plot_line(x,y,save_name):
         xy=(x[max_index], y[max_index]))
 
     plt.savefig(save_name)
+
+# %%

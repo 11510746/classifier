@@ -1,5 +1,5 @@
 #%%
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import KFold
 from imblearn.over_sampling import SMOTE
 from collections import Counter
 from sklearn import svm
@@ -40,27 +40,27 @@ if __name__ == "__main__":
     recall_2 = [0 for i in range(len(param_ratio))]
     accuracy = [0 for i in range(len(param_ratio))]
 
-    kf = StratifiedKFold(n_splits=k, shuffle=True, random_state=10)
+    for i in range(len(param_ratio)):
+        r = param_ratio[i]
 
-    for train_index, test_index in kf.split(x,y):
-        x_train, y_train = x[train_index], y[train_index]
-        x_test, y_test = x[test_index], y[test_index]
+        smote = None
+        sm_x_train = x
+        sm_y_train = y
 
-        for i in range(len(param_ratio)):
-            r = param_ratio[i]
-            smote = None
-            sm_x_train = x_train
-            sm_y_train = y_train
+        print('ratio =', r)
+        if r > 0:
+            smote = SMOTE(sampling_strategy=r, random_state=100)
+            sm_x_train, sm_y_train = smote.fit_sample(x_train, y_train)
+            print(Counter(sm_y_train)) 
 
-            print('ratio =', r)
+        kf = KFold(n_splits=k, shuffle=True, random_state=10)
 
-            if r > 0:
-                smote = SMOTE(sampling_strategy=r, random_state=100)
-                sm_x_train, sm_y_train = smote.fit_sample(x_train, y_train)
-                print(Counter(sm_y_train))
+        for train_index, test_index in kf.split(sm_x_train):
+            x_train, y_train = sm_x_train[train_index], sm_y_train[train_index]
+            x_test, y_test = sm_x_train[test_index], sm_y_train[test_index]
 
-            clf = svm.SVC(kernel='linear')
-            clf.fit(sm_x_train, sm_y_train)
+            clf = svm.SVC(kernel='linear', random_state=10)
+            clf.fit(x_train, y_train)
             y_pred = clf.predict(x_test)
             report = classification_report(y_test, y_pred, output_dict=True)
 
@@ -76,10 +76,10 @@ if __name__ == "__main__":
     recall_2 = np.array(recall_2) * 100 / k
     accuracy = np.array(accuracy) * 100 / k
 
-    plot_line(param_ratio, precision_1, 'img/SM_PRE_1.png')
-    plot_line(param_ratio, precision_2, 'img/SM_PRE_2.png')
-    plot_line(param_ratio, recall_1, 'img/SM_RC_1.png')
-    plot_line(param_ratio, recall_2, 'img/SM_RC_2.png')
-    plot_line(param_ratio, accuracy, 'img/SM_AC.png')
+    plot_line(param_ratio, precision_1, 'img/_SM_PRE_1.png')
+    plot_line(param_ratio, precision_2, 'img/_SM_PRE_2.png')
+    plot_line(param_ratio, recall_1, 'img/_SM_RC_1.png')
+    plot_line(param_ratio, recall_2, 'img/_SM_RC_2.png')
+    plot_line(param_ratio, accuracy, 'img/_SM_AC.png')
 
 

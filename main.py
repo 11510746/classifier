@@ -12,6 +12,8 @@ import utils
 '''
 Train classifiers with train.data (select parameter using cross validation in other files)
 Test on test.data
+
+evaluation: https://blog.csdn.net/sinat_26917383/article/details/75199996
 '''
 
 #%%

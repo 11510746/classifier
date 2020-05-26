@@ -158,6 +158,24 @@ smote = SMOTE(sampling_strategy=0.5, random_state=100) # ratio为0.5的时候，
 
 #### 3.1 评价标准
 
+-   准确率 (Accuracy) 是分类正确的样本占总样本个数的比例 $Accuracy = \frac{n_correct}{n_total}$
+
+    当不同类别样本的比例非常不均衡时，占比大的类别往往成为影响准确率的最主要因素
+
+-   精确率 (precision) 直观地可以说是分类器不将负样本标记为正样本的能力 $precision = \frac{TP}{TP+FP}$
+
+    Precision越高，模型对负样本的区分能力越强
+
+-   召回率 (recall) 指实际为正的样本中被预测为正的样本所占实际为正的样本的比例
+
+    Recall越高，模型对正样本的识别能力越强
+
+-   F1 score是精确率和召回率的调和平均值 $F1=\frac{2 \cdot precision \cdot recall}{precision + recall}$
+
+    最好值为1，最差值为0. 精确率和召回率对F1 score的相对贡献是相等的.
+
+    F1 score越高，说明模型越稳健
+
 #### 3.2 实验结果
 
 ##### 3.2.1 逻辑回归
