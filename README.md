@@ -154,6 +154,10 @@ smote = SMOTE(sampling_strategy=0.5, random_state=100) # ratio为0.5的时候，
 
 #### 2.5 Boosting 类
 
+[Gradient Boosting 调参](https://www.cnblogs.com/pinard/p/6143927.html)
+
+[LGBM](https://zhuanlan.zhihu.com/p/76206257)
+
 ### 实验及结果
 
 #### 3.1 评价标准
