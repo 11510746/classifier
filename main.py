@@ -56,6 +56,7 @@ classifiers = {
 # %%
 scores = {'accuracy':[], 'micro_precision':[], 'macro_precision':[], 'macro_recall':[],
             'micro_recall':[], 'f1':[]}
+index = []
 
 for name,clf in classifiers.items():
     clf = clf.fit(x_train, y_train)
@@ -72,6 +73,8 @@ for name,clf in classifiers.items():
     mic_recall = metrics.recall_score(y_test,y_pred,average='micro')
     scores['micro_recall'].append(mic_recall)
     f1 = metrics.f1_score(y_test,y_pred,average='weighted')
+    scores['f1'].append(f1)
+    index.append(name)
 
     logger.warning(f'====================[{name}]====================')
     logger.info(f'\naccuracy={acc}\tweighted_f1={f1}\n'
@@ -80,5 +83,19 @@ for name,clf in classifiers.items():
                 )
     logger.info(f'classification report\n{metrics.classification_report(y_test, y_pred)}')
     logger.info(f'confusion matrix\n{metrics.confusion_matrix(y_test, y_pred, labels=[-1, 1])}')
+
+
+scores_df = pd.DataFrame(scores)
+scores_df.index = index
+#%%
+fig, axes = plt.subplots(3,2,figsize=(30,24))
+sns.lineplot(y='accuracy', x=scores_df.index, data=scores_df, ax=axes[0][0])
+sns.lineplot(y='f1', x=scores_df.index, data=scores_df, ax=axes[0][1])
+sns.lineplot(y='micro_precision', x=scores_df.index, data=scores_df, ax=axes[1][0])
+sns.lineplot(y='macro_precision', x=scores_df.index, data=scores_df, ax=axes[1][1])
+sns.lineplot(y='macro_recall', x=scores_df.index, data=scores_df, ax=axes[2][0])
+sns.lineplot(y='micro_recall', x=scores_df.index, data=scores_df, ax=axes[2][1])
+
+fig.savefig('scores.png')
 
 # %%
