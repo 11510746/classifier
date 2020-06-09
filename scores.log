@@ -1,0 +1,171 @@
+2020-06-09 19:27:50.000 | WARNING  | __main__:<module>:82 - ====================[lg]====================
+2020-06-09 19:27:50.000 | INFO     | __main__:<module>:83 - 
+accuracy=0.8754826254826255	weighted_f1=0.8937997673786513
+micro_precision=0.5762652026906956	mac_precision=0.8754826254826255
+mac_recall=0.640719610029073	micro_recall=0.8754826254826255
+
+2020-06-09 19:27:50.010 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.96      0.91      0.93      1955
+         1.0       0.19      0.38      0.25       117
+
+    accuracy                           0.88      2072
+   macro avg       0.58      0.64      0.59      2072
+weighted avg       0.92      0.88      0.89      2072
+
+2020-06-09 19:27:50.025 | INFO     | __main__:<module>:88 - confusion matrix
+[[1770  185]
+ [  73   44]]
+2020-06-09 19:27:51.742 | WARNING  | __main__:<module>:82 - ====================[lsvc]====================
+2020-06-09 19:27:51.742 | INFO     | __main__:<module>:83 - 
+accuracy=0.8827220077220077	weighted_f1=0.8979704327839061
+micro_precision=0.5798603651987111	mac_precision=0.8827220077220077
+mac_recall=0.6365204275690209	micro_recall=0.8827220077220077
+
+2020-06-09 19:27:51.751 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.96      0.91      0.94      1955
+         1.0       0.20      0.36      0.26       117
+
+    accuracy                           0.88      2072
+   macro avg       0.58      0.64      0.60      2072
+weighted avg       0.92      0.88      0.90      2072
+
+2020-06-09 19:27:51.767 | INFO     | __main__:<module>:88 - confusion matrix
+[[1787  168]
+ [  75   42]]
+2020-06-09 19:28:13.961 | WARNING  | __main__:<module>:82 - ====================[svc]====================
+2020-06-09 19:28:13.961 | INFO     | __main__:<module>:83 - 
+accuracy=0.8706563706563707	weighted_f1=0.8911380574171274
+micro_precision=0.5752406923660189	mac_precision=0.8706563706563707
+mac_recall=0.6461975648676416	micro_recall=0.8706563706563707
+
+2020-06-09 19:28:13.967 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.96      0.90      0.93      1955
+         1.0       0.19      0.39      0.26       117
+
+    accuracy                           0.87      2072
+   macro avg       0.58      0.65      0.59      2072
+weighted avg       0.92      0.87      0.89      2072
+
+2020-06-09 19:28:13.973 | INFO     | __main__:<module>:88 - confusion matrix
+[[1758  197]
+ [  71   46]]
+2020-06-09 19:28:14.196 | WARNING  | __main__:<module>:82 - ====================[knn]====================
+2020-06-09 19:28:14.196 | INFO     | __main__:<module>:83 - 
+accuracy=0.7915057915057915	weighted_f1=0.8379333091669338
+micro_precision=0.5058489571495582	mac_precision=0.7915057915057915
+mac_recall=0.5158633353006754	micro_recall=0.7915057915057915
+
+2020-06-09 19:28:14.202 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.95      0.83      0.88      1955
+         1.0       0.07      0.21      0.10       117
+
+    accuracy                           0.79      2072
+   macro avg       0.51      0.52      0.49      2072
+weighted avg       0.90      0.79      0.84      2072
+
+2020-06-09 19:28:14.208 | INFO     | __main__:<module>:88 - confusion matrix
+[[1616  339]
+ [  93   24]]
+2020-06-09 19:28:14.297 | WARNING  | __main__:<module>:82 - ====================[rf]====================
+2020-06-09 19:28:14.298 | INFO     | __main__:<module>:83 - 
+accuracy=0.8672779922779923	weighted_f1=0.8875659014094462
+micro_precision=0.5613852885787083	mac_precision=0.8672779922779923
+mac_recall=0.6162830349531117	micro_recall=0.8672779922779923
+
+2020-06-09 19:28:14.303 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.96      0.90      0.93      1955
+         1.0       0.17      0.33      0.22       117
+
+    accuracy                           0.87      2072
+   macro avg       0.56      0.62      0.57      2072
+weighted avg       0.91      0.87      0.89      2072
+
+2020-06-09 19:28:14.310 | INFO     | __main__:<module>:88 - confusion matrix
+[[1758  197]
+ [  78   39]]
+2020-06-09 19:28:14.320 | WARNING  | __main__:<module>:82 - ====================[ada]====================
+2020-06-09 19:28:14.321 | INFO     | __main__:<module>:83 - 
+accuracy=0.7055984555984556	weighted_f1=0.7845963865000819
+micro_precision=0.5436247819277855	mac_precision=0.7055984555984556
+mac_recall=0.6752442783133321	micro_recall=0.7055984555984556
+
+2020-06-09 19:28:14.326 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.97      0.71      0.82      1955
+         1.0       0.12      0.64      0.20       117
+
+    accuracy                           0.71      2072
+   macro avg       0.54      0.68      0.51      2072
+weighted avg       0.92      0.71      0.78      2072
+
+2020-06-09 19:28:14.333 | INFO     | __main__:<module>:88 - confusion matrix
+[[1387  568]
+ [  42   75]]
+2020-06-09 19:28:15.092 | WARNING  | __main__:<module>:82 - ====================[gradboost]====================
+2020-06-09 19:28:15.092 | INFO     | __main__:<module>:83 - 
+accuracy=0.8127413127413128	weighted_f1=0.8513696215640059
+micro_precision=0.5142328123810687	mac_precision=0.8127413127413128
+mac_recall=0.5351520318272236	micro_recall=0.8127413127413128
+
+2020-06-09 19:28:15.098 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.95      0.85      0.90      1955
+         1.0       0.08      0.22      0.12       117
+
+    accuracy                           0.81      2072
+   macro avg       0.51      0.54      0.51      2072
+weighted avg       0.90      0.81      0.85      2072
+
+2020-06-09 19:28:15.105 | INFO     | __main__:<module>:88 - confusion matrix
+[[1658  297]
+ [  91   26]]
+2020-06-09 19:28:15.666 | WARNING  | __main__:<module>:82 - ====================[xgb]====================
+2020-06-09 19:28:15.666 | INFO     | __main__:<module>:83 - 
+accuracy=0.8397683397683398	weighted_f1=0.8680760936108423
+micro_precision=0.5252274709437184	mac_precision=0.8397683397683398
+mac_recall=0.5534920322644108	micro_recall=0.8397683397683398
+
+2020-06-09 19:28:15.672 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.95      0.88      0.91      1955
+         1.0       0.10      0.23      0.14       117
+
+    accuracy                           0.84      2072
+   macro avg       0.53      0.55      0.53      2072
+weighted avg       0.90      0.84      0.87      2072
+
+2020-06-09 19:28:15.678 | INFO     | __main__:<module>:88 - confusion matrix
+[[1713  242]
+ [  90   27]]
+2020-06-09 19:28:15.759 | WARNING  | __main__:<module>:82 - ====================[lgb]====================
+2020-06-09 19:28:15.759 | INFO     | __main__:<module>:83 - 
+accuracy=0.8634169884169884	weighted_f1=0.8847279182442823
+micro_precision=0.5552492721979622	mac_precision=0.8634169884169884
+mac_recall=0.6062014995518832	micro_recall=0.8634169884169884
+
+2020-06-09 19:28:15.764 | INFO     | __main__:<module>:87 - classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.96      0.90      0.93      1955
+         1.0       0.15      0.32      0.21       117
+
+    accuracy                           0.86      2072
+   macro avg       0.56      0.61      0.57      2072
+weighted avg       0.91      0.86      0.88      2072
+
+2020-06-09 19:28:15.770 | INFO     | __main__:<module>:88 - confusion matrix
+[[1752  203]
+ [  80   37]]
