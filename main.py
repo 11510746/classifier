@@ -7,13 +7,16 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
-import pandas as pd
+
 import os
 from loguru import logger
 
+#%%
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 
+#%%
 import utils
 
 '''
@@ -97,5 +100,19 @@ sns.lineplot(y='macro_recall', x=scores_df.index, data=scores_df, ax=axes[2][0])
 sns.lineplot(y='micro_recall', x=scores_df.index, data=scores_df, ax=axes[2][1])
 
 fig.savefig('scores.png')
+
+# %%
+# confuse_dic = {
+#     '-1':[1770,1787,1758,1616,1758,1387,1658,1713,1752],
+#     '1':[44,42,46,24,39,75,26,27,37]
+# }
+
+# confuse_df = pd.DataFrame(confuse_dic)
+# confuse_df.index = ['lg','lsvc','svc','knn','rf','ada','gradboost','xgb','lgb']
+# fig, axes = plt.subplots(2,1,figsize=(30,16))
+# sns.lineplot(x=confuse_df.index, y='-1',data=confuse_df,ax=axes[0],markers=True)
+# sns.lineplot(x=confuse_df.index, y='1',data=confuse_df,ax=axes[1],markers=True)
+# fig.savefig('confuse.png')
+
 
 # %%

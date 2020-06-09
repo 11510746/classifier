@@ -69,7 +69,7 @@ sns.lineplot(x='min_child_samples', y='mean fit time', hue='min_child_weight', d
     markers=True, style='min_child_weight')
 sns.lineplot(x='min_child_samples', y='mean f1 score', hue='min_child_weight', data=df, ax=axes[1], 
     markers=True, style='min_child_weight')
-fig.savefig('img/GS_GRDBST_minchildsamples_weight.png')
+fig.savefig('img/GS_LGBM_minchildsamples_weight.png')
 # best prarams {'min_child_samples': 18, 'min_child_weight': 0.001}
 
 # %% 调整feature_fraction,防止过拟合
@@ -92,7 +92,7 @@ df = pd.DataFrame(
 fig,axes = plt.subplots(2,1,figsize=(30,16))
 sns.lineplot(x='feature_fraction', y='mean fit time',data=df,ax=axes[0])
 sns.lineplot(x='feature_fraction', y='mean f1 score',data=df,ax=axes[1])
-fig.savefig('img/GS_GRDBST_featurefraction.png')
+fig.savefig('img/GS_LGBM_featurefraction.png')
 # best prarams {'feature_fraction': 0.8}
 
 # %% 调整bagging_fraction和bagging_freq
@@ -122,7 +122,7 @@ sns.lineplot(x='bagging_fraction', y='mean fit time', hue='bagging_freq', data=d
     markers=True, style='bagging_freq')
 sns.lineplot(x='bagging_fraction', y='mean f1 score', hue='bagging_freq', data=df, ax=axes[1], 
     markers=True, style='bagging_freq')
-fig.savefig('img/GS_GRDBST_bagging_freq_fraction.png')
+fig.savefig('img/GS_LGBM_bagging_freq_fraction.png')
 # best prarams {'bagging_fraction': 0.9, 'bagging_freq': 3}
 
 # %% cat_smooth为设置每个类别拥有最小的个数，主要用于去噪
@@ -148,5 +148,5 @@ sns.lineplot(x='cat_smooth', y='mean fit time', data=df, ax=axes[0],
     markers=True)
 sns.lineplot(x='cat_smooth', y='mean f1 score', data=df, ax=axes[1], 
     markers=True)
-fig.savefig('img/GS_GRDBST_catsmooth.png')
+fig.savefig('img/GS_LGBM_catsmooth.png')
 # best prarams {best prarams {'cat_smooth': 0}}
