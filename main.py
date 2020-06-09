@@ -67,9 +67,9 @@ for name,clf in classifiers.items():
 
     acc = metrics.accuracy_score(y_test, y_pred) # 每个类别求准确后，再求微平均
     scores['accuracy'].append(acc) 
-    mac_pre = metrics.precision_score(y_test, y_pred, average='micro') # unweighted
+    mac_pre = metrics.precision_score(y_test, y_pred, average='macro') # unweighted
     scores['micro_precision'].append(mac_pre) 
-    mic_pre = metrics.precision_score(y_test, y_pred, average='macro')
+    mic_pre = metrics.precision_score(y_test, y_pred, average='micro')
     scores['macro_precision'].append(mic_pre)
     mac_recall = metrics.recall_score(y_test,y_pred, average='macro')
     scores['macro_recall'].append(mac_recall)
