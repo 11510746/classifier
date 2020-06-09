@@ -78,7 +78,7 @@ for name,clf in classifiers.items():
 
     logger.warning(f'====================[{name}]====================')
     logger.info(f'\naccuracy={acc}\tweighted_f1={f1}\n'
-                f'micro_precision={mac_pre}\tmac_precision={mac_pre}\n'
+                f'micro_precision={mic_pre}\tmac_precision={mac_pre}\n'
                 f'mac_recall={mac_recall}\tmicro_recall={mic_recall}\n'
                 )
     logger.info(f'classification report\n{metrics.classification_report(y_test, y_pred)}')

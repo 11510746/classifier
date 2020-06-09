@@ -15,25 +15,26 @@ dframe = pd.read_table('dataset/train.data', header=None, delim_whitespace=True)
 
 #%%
 # min and max
-print('Min val for each feature')
-print(dframe.min())
-print('Max val for each feature')
-print(dframe.max())
+# print('Min val for each feature')
+# print(dframe.min())
+# print('Max val for each feature')
+# print(dframe.max())
 
 
 #%%
 # correlation of feature
-plt.clf()
-corr = dframe.corr().round(2)
-mask = np.tril(np.ones(corr.shape)).astype(np.bool)
-corr_lt = corr.where(mask) # only keep lower triangle
-sns_plot = sns.heatmap(corr_lt, vmin=0, vmax=1, annot=True, cmap="Blues")
-sns_plot.get_figure().savefig('img/feature_corr.png')
+# plt.clf()
+# corr = dframe.corr().round(2)
+# mask = np.tril(np.ones(corr.shape)).astype(np.bool)
+# corr_lt = corr.where(mask) # only keep lower triangle
+# sns_plot = sns.heatmap(corr_lt, vmin=0, vmax=1, annot=True, cmap="Blues")
+# sns_plot.get_figure().savefig('img/feature_corr.png')
 
 # %%
 # num of samples for each class
 print('No. of samples in each class')
 print(Counter(dframe[len(dframe.columns)-1]))
+
 
 
 # %%

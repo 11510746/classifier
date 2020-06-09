@@ -36,9 +36,9 @@ df = pd.DataFrame(
     )
 
 #%%
-fig, axes = plt.subplots(1,2,figsize=(20, 10))
-sns.lineplot(x='C', y='mean fit time', data=df, ax=axes[0], markers=True)
-sns.lineplot(x='C', y='mean fit time', data=df, ax=axes[1], markers=True)
+fig, axes = plt.subplots(figsize=(20, 10))
+# sns.lineplot(x='C', y='mean fit time', data=df, ax=axes[0], markers=True)
+sns.lineplot(x='C', y='mean f1 score', data=df,  markers=True)
 
 fig.savefig('img/GS_Linear_SVM_c.png')
 

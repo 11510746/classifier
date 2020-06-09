@@ -71,7 +71,7 @@ sns.lineplot(x='min_samples_split', y='mean fit time',style='max_depth', data=df
     markers=True )
 sns.lineplot(x='min_samples_split', y='mean f1 score', style='max_depth',data=df, ax=axes[1], 
     markers=True )
-fig.savefig('img/GS_GRDBST_depth_minsample.png')
+fig.savefig('img/GS_RF_depth_minsample.png')
 # best prarams {'max_depth': 13, 'min_samples_split': 30}
 
 # %%
@@ -101,7 +101,7 @@ sns.lineplot(x='min_samples_split', y='mean fit time',style='min_samples_leaf', 
     markers=True )
 sns.lineplot(x='min_samples_split', y='mean f1 score', style='min_samples_leaf',data=df, ax=axes[1], 
     markers=True )
-fig.savefig('img/GS_GRDBST_minleaf_minsplit.png')
+fig.savefig('img/GS_RF_minleaf_minsplit.png')
 
 # best prarams {'min_samples_leaf': 20, 'min_samples_split': 30}
 
@@ -129,7 +129,7 @@ sns.lineplot(x='max_features', y='mean fit time', data=df, ax=axes[0],
     markers=True )
 sns.lineplot(x='max_features', y='mean f1 score',data=df, ax=axes[1], 
     markers=True )
-fig.savefig('img/GS_GRDBST_minleaf_minsplit.png')
+fig.savefig('img/GS_RF_maxft.png')
 # best prarams {'max_features': 0.8}
 
 # %%

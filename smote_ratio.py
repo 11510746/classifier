@@ -15,18 +15,6 @@ import utils
 explore the impact of different smote ratio on the precision, recall for each class, and the accuracy
 '''
 
-def plot_line(x,y,save_name):
-    plt.clf()
-    plt.plot(x, y)
-
-    # show annotation for the max point
-    max_index = np.argmax(y)
-    text = '[{}, {}]'.format(x[max_index], round(y[max_index],2))
-    plt.annotate(text, xytext=(x[max_index], y[max_index]),
-        xy=(x[max_index], y[max_index]))
-
-    plt.savefig(save_name)
-
 #%%
 if __name__ == "__main__":
     x,y = utils.load_data('dataset/train.data')
@@ -76,10 +64,29 @@ if __name__ == "__main__":
     recall_2 = np.array(recall_2) * 100 / k
     accuracy = np.array(accuracy) * 100 / k
 
-    plot_line(param_ratio, precision_1, 'img/SM_PRE_1.png')
-    plot_line(param_ratio, precision_2, 'img/SM_PRE_2.png')
-    plot_line(param_ratio, recall_1, 'img/SM_RC_1.png')
-    plot_line(param_ratio, recall_2, 'img/SM_RC_2.png')
-    plot_line(param_ratio, accuracy, 'img/SM_AC.png')
+    fig,axes = plt.subplots(2,2,figsize=(30,16))
+    axes[0][0].set_xlabel('sampling_strategy')
+    axes[0][0].set_ylabel('precision for class 1')
+    axes[0][1].set_xlabel('sampling_strategy')
+    axes[0][1].set_ylabel('precision for class -1')
+    axes[1][0].set_xlabel('sampling_strategy')
+    axes[1][0].set_ylabel('recall for class 1')
+    axes[1][1].set_xlabel('sampling_strategy')
+    axes[1][1].set_ylabel('recall for class -1')
+    sns.lineplot(x=param_ratio, y=precision_1,markers=True,ax=axes[0][0])
+    sns.lineplot(x=param_ratio, y=precision_2,markers=True,ax=axes[0][1])
+    sns.lineplot(x=param_ratio, y=recall_1,markers=True,ax=axes[1][0])
+    sns.lineplot(x=param_ratio, y=recall_2,markers=True,ax=axes[1][1])
+    fig.savefig('img/SM_PRE_RECALL.png')
+
+#%%
+    fig,ax = plt.subplots()
+    ax.set_xlabel('sampling_strategy')
+    ax.set_ylabel('accuracy')
+    sns.lineplot(x=param_ratio, y=accuracy,markers=True,ax=ax)
+    fig.savefig('img/SM_AC.png')
 
 
+
+
+# %%
